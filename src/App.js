@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/Pages/HomePage/HomePage";
 import MuiTheme from "./styles/MuiTheme";
 
