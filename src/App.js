@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from "@material-ui/core";
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./components/Pages/HomePage/HomePage";
+import MuiTheme from "./styles/MuiTheme";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+   return (
+      <div>
+         <div className="App" dir={MuiTheme.direction}>
+            <Grid container item xs={12} sm={8} md={6} lg={6} style={{ margin: "auto" }}>
+               <Switch>
+                  <Route exact path="/" component={HomePage} />
+               </Switch>
+            </Grid>
+         </div>
+      </div>
+   );
+};
 
 export default App;
