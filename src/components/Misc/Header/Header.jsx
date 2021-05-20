@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Grid } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core";
+import IconWrapper from "../../Icons/IconWrapper";
 
 const title = false;
 
@@ -35,7 +36,9 @@ const Header = () => {
    return (
       <Grid container item xs={12} sm={8} md={6} lg={6} className={classes.Header} id="navbar">
          <AppBar position="static" elevation={0}>
-            <Toolbar className={classes.Header_Toolbar}></Toolbar>
+            <Toolbar className={classes.Header_Toolbar}>
+               <IconWrapper type="hamburger" />
+            </Toolbar>
          </AppBar>
       </Grid>
    );

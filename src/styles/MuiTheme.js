@@ -15,8 +15,8 @@ let MuiTheme = {
    // use this one
    paletteFixed: {
       primary: {
-         main: "#FF789B",
-         mainGradient: "#FF91AD",
+         main: "#5DC4F9",
+         mainGradient: "#5DC4F9",
          pinkGradient: "linear-gradient(135deg, #ff91ad 0%, #ff789b 100%)",
          overlay: "linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%)",
          dark: "#1A1A1A",
@@ -72,27 +72,6 @@ let MuiTheme = {
    },
    typography: {
       fontFamily: '"Varela Round",Roboto,"Helvetica Neue",Arial,sans-serif',
-   },
-
-   // left for older components
-   palette: {
-      background: {
-         default: "#F8F8F8",
-      },
-      primary: {
-         main: "#FF789B",
-         white: "#ffffff",
-         dark: "#1A1A1A",
-         gray: "#F8F8F8",
-      },
-      secondary: {
-         main: "#fac0cf",
-         gray: "#f6f6fa",
-         dark: "#9E9E9E",
-      },
-      blue: {
-         main: "#499bea",
-      },
    },
 };
 
