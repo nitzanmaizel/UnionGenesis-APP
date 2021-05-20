@@ -1,8 +1,13 @@
 import React from "react";
-import text from "../../../styles/text";
+// import text from "../../../styles/text";
+import Header from "../../Misc/Header/Header";
 
 const HomePage = () => {
-   return <div>{text.HomePage}</div>;
+   return (
+      <div>
+         <Header />
+      </div>
+   );
 };
 
 export default HomePage;
