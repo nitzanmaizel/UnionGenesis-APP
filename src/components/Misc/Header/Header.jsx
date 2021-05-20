@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Grid, Button } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core";
 import IconWrapper from "../../Icons/IconWrapper";
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
    },
    Header_Toolbar: {
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "space-between",
       height: 80,
       alignItems: "center",
    },
@@ -38,6 +38,8 @@ const Header = () => {
          <AppBar position="static" elevation={0}>
             <Toolbar className={classes.Header_Toolbar}>
                <IconWrapper type="hamburger" />
+               <IconWrapper type="logo" />
+               <IconWrapper type="search" />
             </Toolbar>
          </AppBar>
       </Grid>
