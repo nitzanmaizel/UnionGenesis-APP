@@ -1,21 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 import MuiTheme from "./styles/MuiTheme";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const history = createBrowserHistory();
 const theme = createMuiTheme(MuiTheme);
 
 const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
 renderMethod(
-   <MuiThemeProvider theme={theme}>
-      <CssBaseline>
-         <App />
-      </CssBaseline>
-   </MuiThemeProvider>,
+   <BrowserRouter forceRefresh={true}>
+      <Router history={history}>
+         <MuiThemeProvider theme={theme}>
+            <CssBaseline>
+               <App />
+            </CssBaseline>
+         </MuiThemeProvider>
+      </Router>
+   </BrowserRouter>,
    document.getElementById("root")
 );
 
