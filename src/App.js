@@ -14,33 +14,31 @@ const App = () => {
    const { userData } = useContext(UserDataContext);
 
    return (
-      <div>
-         <div className="App" dir={MuiTheme.direction}>
-            <Grid container item xs={12} sm={8} md={6} lg={6} style={{ margin: "auto" }}>
-               <Switch>
-                  <Route exact path="/">
-                     <HomePage userData={userData} />
-                     <BottomNav userData={userData} />
-                  </Route>
-                  <Route exact path="/map">
-                     <MapPage userData={userData} />
-                     <BottomNav userData={userData} />
-                  </Route>
-                  <Route exact path="/chat">
-                     <ChatPage userData={userData} />
-                     <BottomNav userData={userData} />
-                  </Route>
-                  <Route exact path="/challenge">
-                     <ChallengePage userData={userData} />
-                     <BottomNav userData={userData} />
-                  </Route>
-                  <Route exact path="/profile">
-                     <ProfilePage userData={userData} />
-                     <BottomNav userData={userData} />
-                  </Route>
-               </Switch>
-            </Grid>
-         </div>
+      <div className="App" dir={MuiTheme.direction}>
+         <Grid container item xs={12} sm={8} md={6} lg={6} style={{ margin: "auto" }}>
+            <Switch>
+               <Route exact path="/">
+                  <HomePage userData={userData} />
+                  {/* <BottomNav userData={userData} /> */}
+               </Route>
+               <Route exact path="/map">
+                  <MapPage userData={userData} />
+                  <BottomNav userData={userData} />
+               </Route>
+               <Route exact path="/chat">
+                  <ChatPage userData={userData} />
+                  <BottomNav userData={userData} />
+               </Route>
+               <Route exact path="/challenge">
+                  <ChallengePage userData={userData} />
+                  <BottomNav userData={userData} />
+               </Route>
+               <Route exact path="/profile">
+                  <ProfilePage userData={userData} />
+                  <BottomNav userData={userData} />
+               </Route>
+            </Switch>
+         </Grid>
       </div>
    );
 };

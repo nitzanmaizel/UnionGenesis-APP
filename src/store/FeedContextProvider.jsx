@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useCallback, useRef } from "react";
+import React, { createContext, useState, useEffect, useRef } from "react";
 import AppText from "../styles/AppText";
 
 const INTERESTS = [
@@ -72,7 +72,7 @@ export const FeedContextProvider = ({ children }) => {
       if (currentInterest.id === 6) {
          setFeedToShow(feedToShow);
       }
-   }, [currentInterest]);
+   }, [currentInterest, feedToShow, userPosts]);
 
    const context = { feed, userPosts, interests, currentInterest };
    const contextFunctions = useRef({ setFeed, setUserPosts, setInterests, setCurrentInterest });

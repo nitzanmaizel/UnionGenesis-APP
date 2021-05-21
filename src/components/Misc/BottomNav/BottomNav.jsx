@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-import { Avatar, BottomNavigation, BottomNavigationAction, Grid } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
+
 import IconWrapper from "../../Icons/IconWrapper";
 import AppText from "../../../styles/AppText";
 import AppColors from "../../../styles/AppColors";
@@ -39,80 +40,63 @@ const useStyles = makeStyles((theme) => ({
          marginBottom: 24,
       },
    },
+   BottomNav_Container: {
+      minWidth: "100%",
+      display: "flex",
+      justifyContent: "space-around",
+      // position: "absolute",
+      // bottom: 0,
+   },
+   BottomNav_Icon_Wrapper: {
+      display: "flex",
+      flexDirection: "column",
+   },
+   BottomNav_Icon_label: {
+      textAlign: "center",
+      fontSize: 16,
+   },
 }));
 
 const BottomNav = ({ userData }) => {
    const classes = useStyles();
    let history = useHistory();
-   const [value, setValue] = useState(0);
 
-   const handleChange = (event, newValue) => {
-      if (newValue === undefined || newValue === null || !event) return;
-      setValue(newValue);
-
-      switch (newValue) {
-         case 0:
-            history.push("/");
-            break;
-         case 1:
-            history.push("/map");
-            break;
-         case 2:
-            history.push("/chat");
-            break;
-         case 3:
-            history.push("/challenge");
-            break;
-         case 4:
-            history.push("/profile");
-            break;
-         default:
-            break;
-      }
+   const handleOnClick = (e) => {
+      let targetURL = e.currentTarget.getAttribute("name");
+      if (targetURL === "home") history.push("/");
+      else history.push(`/${targetURL}`);
    };
 
    return (
-      <Grid container item xs={12} sm={8} md={6} lg={6} className={classes.root}>
-         <BottomNavigation showLabels value={value} onChange={(e, newValue) => handleChange(e, newValue)}>
-            <BottomNavigationAction
-               label={AppText.bottomNav.home}
-               icon={<IconWrapper type="home" color={history.location.pathname === "/" ? AppColors.primary : AppColors.dark} />}
+      <div className={classes.BottomNav_Container}>
+         <div name={"home"} className={classes.BottomNav_Icon_Wrapper} onClick={(e) => handleOnClick(e)}>
+            <IconWrapper type="home" color={history.location.pathname === "/" ? AppColors.primary : AppColors.dark} />
+            <span className={classes.BottomNav_Icon_label}>{AppText.bottomNav.home}</span>
+         </div>
+         <div name="chat" className={classes.BottomNav_Icon_Wrapper} onClick={(e) => handleOnClick(e)}>
+            <IconWrapper type="chat" color={history.location.pathname === "/chat" ? AppColors.primary : AppColors.dark} />
+            <span className={classes.BottomNav_Icon_label}>{AppText.bottomNav.chat}</span>
+         </div>
+         <div name="map" className={classes.BottomNav_Icon_Wrapper} onClick={(e) => handleOnClick(e)}>
+            <IconWrapper type="location" color={history.location.pathname === "/map" ? AppColors.primary : AppColors.dark} />
+            <span className={classes.BottomNav_Icon_label}>{AppText.bottomNav.map}</span>
+         </div>
+         <div name="challenge" className={classes.BottomNav_Icon_Wrapper} onClick={(e) => handleOnClick(e)}>
+            <IconWrapper
+               type="challenge"
+               color={history.location.pathname === "/challenge" ? AppColors.primary : AppColors.dark}
             />
-            <BottomNavigationAction
-               label={AppText.bottomNav.map}
-               icon={
-                  <IconWrapper
-                     type="location"
-                     color={history.location.pathname === "/map" ? AppColors.primary : AppColors.dark}
-                  />
-               }
+            <span className={classes.BottomNav_Icon_label}>{AppText.bottomNav.challenge}</span>
+         </div>
+         <div name="profile" className={classes.BottomNav_Icon_Wrapper} onClick={(e) => handleOnClick(e)}>
+            <Avatar
+               src={userData.isLoggedIn ? userData.profileImage : ""}
+               color={history.location.pathname === "/profile" ? AppColors.primary : AppColors.dark}
+               style={{ height: 40, width: 40 }}
             />
-            <BottomNavigationAction
-               label={AppText.bottomNav.chat}
-               icon={
-                  <IconWrapper type="chat" color={history.location.pathname === "/chat" ? AppColors.primary : AppColors.dark} />
-               }
-            />
-            <BottomNavigationAction
-               label={AppText.bottomNav.challenge}
-               icon={
-                  <IconWrapper
-                     type="challenge"
-                     color={history.location.pathname === "/challenge" ? AppColors.primary : AppColors.dark}
-                  />
-               }
-            />
-            <BottomNavigationAction
-               label={AppText.bottomNav.profile}
-               icon={
-                  <Avatar
-                     src={userData.isLoggedIn ? userData.profileImage : ""}
-                     color={history.location.pathname === "/profile" ? AppColors.primary : AppColors.dark}
-                  />
-               }
-            />
-         </BottomNavigation>
-      </Grid>
+            <span className={classes.BottomNav_Icon_label}>{AppText.bottomNav.profile}</span>
+         </div>
+      </div>
    );
 };
 
