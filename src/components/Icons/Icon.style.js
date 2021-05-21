@@ -1,4 +1,4 @@
-export default () => ({
+const iconStyle = () => ({
    icon: {
       width: 30,
       display: "flex",
@@ -6,3 +6,5 @@ export default () => ({
       alignItems: "center",
    },
 });
+
+export default iconStyle;

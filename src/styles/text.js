@@ -1,5 +1,11 @@
 let text = {
-   HomePage: "דף הבית",
+   bottomNav: {
+      home: "בית",
+      map: "מפה",
+      chat: "צ'אט",
+      challenge: "אתגרים",
+      profile: "פרופיל",
+   },
 };
 
 export default text;
