@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Grid, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Grid } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core";
 import IconWrapper from "../../Icons/IconWrapper";

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Misc/Header/Header";
 
-const HomePage = ({ userData }) => {
+const ChallengePage = ({ userData }) => {
    return (
       <div>
          <Header userData={userData} />
@@ -9,4 +9,4 @@ const HomePage = ({ userData }) => {
    );
 };
 
-export default HomePage;
+export default ChallengePage;

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { Avatar, BottomNavigation, BottomNavigationAction, Grid } from "@material-ui/core";
 import IconWrapper from "../../Icons/IconWrapper";
-import text from "../../../styles/text";
+import AppText from "../../../styles/AppText";
 import AppColors from "../../../styles/AppColors";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,10 +45,9 @@ const BottomNav = ({ userData }) => {
    const classes = useStyles();
    let history = useHistory();
    const [value, setValue] = useState(0);
-   console.log(userData, "userData");
 
    const handleChange = (event, newValue) => {
-      if (newValue === undefined || newValue === null) return;
+      if (newValue === undefined || newValue === null || !event) return;
       setValue(newValue);
 
       switch (newValue) {
@@ -76,11 +75,11 @@ const BottomNav = ({ userData }) => {
       <Grid container item xs={12} sm={8} md={6} lg={6} className={classes.root}>
          <BottomNavigation showLabels value={value} onChange={(e, newValue) => handleChange(e, newValue)}>
             <BottomNavigationAction
-               label={text.bottomNav.home}
+               label={AppText.bottomNav.home}
                icon={<IconWrapper type="home" color={history.location.pathname === "/" ? AppColors.primary : AppColors.dark} />}
             />
             <BottomNavigationAction
-               label={text.bottomNav.map}
+               label={AppText.bottomNav.map}
                icon={
                   <IconWrapper
                      type="location"
@@ -89,13 +88,13 @@ const BottomNav = ({ userData }) => {
                }
             />
             <BottomNavigationAction
-               label={text.bottomNav.chat}
+               label={AppText.bottomNav.chat}
                icon={
                   <IconWrapper type="chat" color={history.location.pathname === "/chat" ? AppColors.primary : AppColors.dark} />
                }
             />
             <BottomNavigationAction
-               label={text.bottomNav.challenge}
+               label={AppText.bottomNav.challenge}
                icon={
                   <IconWrapper
                      type="challenge"
@@ -104,10 +103,10 @@ const BottomNav = ({ userData }) => {
                }
             />
             <BottomNavigationAction
-               label={text.bottomNav.profile}
+               label={AppText.bottomNav.profile}
                icon={
                   <Avatar
-                     src={userData.profileImage}
+                     src={userData.isLoggedIn ? userData.profileImage : ""}
                      color={history.location.pathname === "/profile" ? AppColors.primary : AppColors.dark}
                   />
                }

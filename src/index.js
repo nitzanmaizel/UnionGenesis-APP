@@ -5,6 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
+import { UserDataContextProvider } from "./store/UserDataContextProvider";
+import { FeedContextProvider } from "./store/FeedContextProvider";
+
 import MuiTheme from "./styles/MuiTheme";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -19,7 +22,11 @@ renderMethod(
       <Router history={history}>
          <MuiThemeProvider theme={theme}>
             <CssBaseline>
-               <App />
+               <FeedContextProvider>
+                  <UserDataContextProvider>
+                     <App />
+                  </UserDataContextProvider>
+               </FeedContextProvider>
             </CssBaseline>
          </MuiThemeProvider>
       </Router>
