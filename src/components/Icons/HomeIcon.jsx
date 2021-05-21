@@ -4,11 +4,12 @@ const HomeIcon = ({ color = "black", size = "40" }) => {
    return (
       <svg
          id="Layer_1"
-         enable-background="new 0 0 512 512"
+         enableBackground="new 0 0 512 512"
          height={size}
          viewBox="0 0 512 512"
          width={size}
          xmlns="http://www.w3.org/2000/svg"
+         fill={color}
       >
          <g>
             <path d="m426 495.983h-340c-25.364 0-46-20.635-46-46v-242.02c0-8.836 7.163-16 16-16s16 7.164 16 16v242.02c0 7.72 6.28 14 14 14h340c7.72 0 14-6.28 14-14v-242.02c0-8.836 7.163-16 16-16s16 7.164 16 16v242.02c0 25.364-20.635 46-46 46z" />

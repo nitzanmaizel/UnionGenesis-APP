@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Avatar, BottomNavigation, BottomNavigationAction, Grid } from "@material-ui/core";
 import IconWrapper from "../../Icons/IconWrapper";
 import text from "../../../styles/text";
+import AppColors from "../../../styles/AppColors";
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       position: "absolute",
       background: "#F8F8F8",
-      color: theme.paletteFixed.primary.dark,
+      color: theme.palette.primary.dark,
       minHeight: 90,
       boxShadow: "0px 4px 40px rgba(25, 25, 25, 0.1)",
       bottom: 0,
@@ -74,11 +75,43 @@ const BottomNav = ({ userData }) => {
    return (
       <Grid container item xs={12} sm={8} md={6} lg={6} className={classes.root}>
          <BottomNavigation showLabels value={value} onChange={(e, newValue) => handleChange(e, newValue)}>
-            <BottomNavigationAction label={text.bottomNav.home} icon={<IconWrapper type="home" />} />
-            <BottomNavigationAction label={text.bottomNav.map} icon={<IconWrapper type="location" />} />
-            <BottomNavigationAction label={text.bottomNav.chat} icon={<IconWrapper type="chat" />} />
-            <BottomNavigationAction label={text.bottomNav.challenge} icon={<IconWrapper type="challenge" />} />
-            <BottomNavigationAction label={text.bottomNav.profile} icon={<Avatar src={userData.profileImage} />} />
+            <BottomNavigationAction
+               label={text.bottomNav.home}
+               icon={<IconWrapper type="home" color={history.location.pathname === "/" ? AppColors.primary : AppColors.dark} />}
+            />
+            <BottomNavigationAction
+               label={text.bottomNav.map}
+               icon={
+                  <IconWrapper
+                     type="location"
+                     color={history.location.pathname === "/map" ? AppColors.primary : AppColors.dark}
+                  />
+               }
+            />
+            <BottomNavigationAction
+               label={text.bottomNav.chat}
+               icon={
+                  <IconWrapper type="chat" color={history.location.pathname === "/chat" ? AppColors.primary : AppColors.dark} />
+               }
+            />
+            <BottomNavigationAction
+               label={text.bottomNav.challenge}
+               icon={
+                  <IconWrapper
+                     type="challenge"
+                     color={history.location.pathname === "/challenge" ? AppColors.primary : AppColors.dark}
+                  />
+               }
+            />
+            <BottomNavigationAction
+               label={text.bottomNav.profile}
+               icon={
+                  <Avatar
+                     src={userData.profileImage}
+                     color={history.location.pathname === "/profile" ? AppColors.primary : AppColors.dark}
+                  />
+               }
+            />
          </BottomNavigation>
       </Grid>
    );

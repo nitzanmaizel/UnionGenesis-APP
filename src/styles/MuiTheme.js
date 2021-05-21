@@ -13,7 +13,7 @@ let MuiTheme = {
       },
    },
    // use this one
-   paletteFixed: {
+   palette: {
       primary: {
          main: "#5DC4F9",
          mainGradient: "#5DC4F9",
