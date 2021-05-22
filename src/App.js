@@ -10,16 +10,27 @@ import ChatPage from "./components/Pages/ChatPage/ChatPage";
 import MuiTheme from "./styles/MuiTheme";
 import { UserDataContext } from "./store/UserDataContextProvider";
 
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+   root: {
+      // maxWidth: "100vh",
+      // minHeight: "100vh",
+   },
+}));
+
 const App = () => {
+   const classes = useStyles();
+
    const { userData } = useContext(UserDataContext);
 
    return (
-      <div className="App" dir={MuiTheme.direction}>
-         <Grid container item xs={12} sm={8} md={6} lg={6} style={{ margin: "auto" }}>
+      <Grid container dir={MuiTheme.direction}>
+         <Grid container item xs={12} sm={8} md={6} lg={6} style={{ margin: "auto" }} className={classes.root}>
             <Switch>
                <Route exact path="/">
                   <HomePage userData={userData} />
-                  {/* <BottomNav userData={userData} /> */}
+                  <BottomNav userData={userData} />
                </Route>
                <Route exact path="/map">
                   <MapPage userData={userData} />
@@ -39,7 +50,7 @@ const App = () => {
                </Route>
             </Switch>
          </Grid>
-      </div>
+      </Grid>
    );
 };
 

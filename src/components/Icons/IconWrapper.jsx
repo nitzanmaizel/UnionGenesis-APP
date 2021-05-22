@@ -1,22 +1,39 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
-import iconStyle from "./Icon.style";
-import HamburgerIcon from "./HamburgerIcon";
-import SearchIcon from "./SearchIcon";
-import LogoIcon from "./LogoIcon";
-import HomeIcon from "./HomeIcon";
-import LocationIcon from "./LocationIcon";
+import BellIcon from "./BellIcon";
+import BookmarkIcon from "./BookmarkIcon";
 import ChatIcon from "./ChatIcon";
 import ChallengeIcon from "./ChallengeIcon";
+import ContactIcon from "./ContactIcon";
+import ClipboardIcon from "./ClipboardIcon";
+import EditIcon from "./EditIcon";
+import ExitIcon from "./ExitIcon";
+import HamburgerIcon from "./HamburgerIcon";
+import HomeIcon from "./HomeIcon";
+import LocationIcon from "./LocationIcon";
+import LogoIcon from "./LogoIcon";
+import NotePadIcon from "./NotePadIcon";
+import SearchIcon from "./SearchIcon";
+import ShareIcon from "./ShareIcon";
+
+import { makeStyles } from "@material-ui/core";
+import iconStyle from "./Icon.style";
 
 const mapTypeToIcon = {
+   bell: (props) => <BellIcon {...props} />,
+   bookmark: (props) => <BookmarkIcon {...props} />,
+   challenge: (props) => <ChallengeIcon {...props} />,
+   chat: (props) => <ChatIcon {...props} />,
+   contact: (props) => <ClipboardIcon {...props} />,
+   clipboard: (props) => <ContactIcon {...props} />,
+   edit: (props) => <EditIcon {...props} />,
+   exit: (props) => <ExitIcon {...props} />,
    hamburger: (props) => <HamburgerIcon {...props} />,
-   search: (props) => <SearchIcon {...props} />,
-   logo: (props) => <LogoIcon {...props} />,
    home: (props) => <HomeIcon {...props} />,
    location: (props) => <LocationIcon {...props} />,
-   chat: (props) => <ChatIcon {...props} />,
-   challenge: (props) => <ChallengeIcon {...props} />,
+   logo: (props) => <LogoIcon {...props} />,
+   notepad: (props) => <NotePadIcon {...props} />,
+   search: (props) => <SearchIcon {...props} />,
+   share: (props) => <ShareIcon {...props} />,
 };
 
 const useStyles = makeStyles(iconStyle);

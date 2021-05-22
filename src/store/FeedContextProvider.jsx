@@ -7,36 +7,42 @@ const INTERESTS = [
       name: AppText.AppInterests.feed,
       shortName: AppText.AppInterests.feed,
       translateName: "Feed",
+      buttonText: AppText.AppInterests.buttonText.feed,
    },
    {
       id: 2,
       name: AppText.AppInterests.miracleStories,
       shortName: AppText.AppInterests.miracleStories,
       translateName: "Miracle Stories",
+      buttonText: AppText.AppInterests.buttonText.miracleStories,
    },
    {
       id: 3,
       name: AppText.AppInterests.inspirationalStories,
       shortName: AppText.AppInterests.inspirationalStories,
       translateName: "Inspirational Stories",
+      buttonText: AppText.AppInterests.buttonText.inspirationalStories,
    },
    {
       id: 4,
       name: AppText.AppInterests.mutualAid,
       shortName: AppText.AppInterests.mutualAid,
       translateName: "Mutual Aid",
+      buttonText: AppText.AppInterests.buttonText.mutualAid,
    },
    {
       id: 5,
       name: AppText.AppInterests.volunteering,
       shortName: AppText.AppInterests.volunteering,
-      translateName: "fun with baby",
+      translateName: "Volunteering",
+      buttonText: AppText.AppInterests.buttonText.volunteering,
    },
    {
       id: 6,
       name: AppText.AppInterests.donate,
       shortName: AppText.AppInterests.donate,
       translateName: "Donate",
+      buttonText: AppText.AppInterests.buttonText.donate,
    },
 ];
 
