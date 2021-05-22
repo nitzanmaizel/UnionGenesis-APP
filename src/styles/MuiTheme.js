@@ -9,17 +9,25 @@ let MuiTheme = {
             html: {
                direction: "rtl",
             },
+            body: {
+               "& ::-webkit-scrollbar": {
+                  width: 0,
+                  background: "transparent",
+                  display: "none",
+               },
+            },
          },
       },
    },
-   // use this one
-   paletteFixed: {
+
+   palette: {
       primary: {
-         main: "#FF789B",
-         mainGradient: "#FF91AD",
-         pinkGradient: "linear-gradient(135deg, #ff91ad 0%, #ff789b 100%)",
+         main: "#5DC4F9",
+         mainGradient: "#5DC4F9",
+         primaryGradient: "linear-gradient(135deg, #00BFFF 0%,  #1E90FF 100%)",
          overlay: "linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%)",
          dark: "#1A1A1A",
+         white: "#FFFFFF",
          background: "#F8F8F8",
          background2: "#FFFFFF",
          textWeaker: "#9E9E9E",
@@ -32,7 +40,7 @@ let MuiTheme = {
    },
    shadow: {
       card: "0px 4px 20px rgba(25, 25, 25, 0.1)",
-      pinkButton: "0px 4px 20px rgba(255, 148, 191, 0.2)",
+      primaryButton: "0px 4px 10px #716e6e",
    },
    sizes: {
       header: 80,
@@ -72,27 +80,6 @@ let MuiTheme = {
    },
    typography: {
       fontFamily: '"Varela Round",Roboto,"Helvetica Neue",Arial,sans-serif',
-   },
-
-   // left for older components
-   palette: {
-      background: {
-         default: "#F8F8F8",
-      },
-      primary: {
-         main: "#FF789B",
-         white: "#ffffff",
-         dark: "#1A1A1A",
-         gray: "#F8F8F8",
-      },
-      secondary: {
-         main: "#fac0cf",
-         gray: "#f6f6fa",
-         dark: "#9E9E9E",
-      },
-      blue: {
-         main: "#499bea",
-      },
    },
 };
 
