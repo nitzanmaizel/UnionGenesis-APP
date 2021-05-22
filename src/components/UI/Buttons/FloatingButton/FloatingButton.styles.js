@@ -7,6 +7,10 @@ const MuiStyleFunction = (theme) => ({
       height: 44,
       whiteSpace: "nowrap",
       boxShadow: theme.shadow.primaryButton,
+      "&:hover": {
+         backgroundColor: theme.palette.primary.main,
+         color: theme.palette.primary.white,
+      },
    },
    FloatingButton_button_text: {
       paddingLeft: 10,

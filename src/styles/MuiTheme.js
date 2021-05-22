@@ -27,6 +27,7 @@ let MuiTheme = {
          primaryGradient: "linear-gradient(135deg, #00BFFF 0%,  #1E90FF 100%)",
          overlay: "linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%)",
          dark: "#1A1A1A",
+         white: "#FFFFFF",
          background: "#F8F8F8",
          background2: "#FFFFFF",
          textWeaker: "#9E9E9E",

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-const AppButton = ({ children, selected, className, onClick = () => {} }) => {
+const CategoryButton = ({ children, selected, className, onClick = () => {} }) => {
    const classes = useStyles();
 
    return (
@@ -40,4 +40,4 @@ const AppButton = ({ children, selected, className, onClick = () => {} }) => {
    );
 };
 
-export default AppButton;
+export default CategoryButton;

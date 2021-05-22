@@ -1,6 +1,6 @@
 import React from "react";
 
-import AppButton from "../../UI/Buttons/AppButton/AppButton";
+import CategoryButton from "../../UI/Buttons/CategoryButton/CategoryButton";
 
 import { makeStyles } from "@material-ui/core";
 import MuiStyleFunction from "./CategoryChoiceHeader.styles";
@@ -27,7 +27,9 @@ const CategoryChoiceHeader = () => {
                      key={interest.id}
                      className={classes.CategoryChoiceHeader_button_wrapper}
                   >
-                     <AppButton selected={interest.id === currentInterest.id ? true : false}>{interest.shortName}</AppButton>
+                     <CategoryButton selected={interest.id === currentInterest.id ? true : false}>
+                        {interest.shortName}
+                     </CategoryButton>
                   </span>
                ))}
             </div>
